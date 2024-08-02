@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # LaTeX-Lebenslauf-Template
 ## Notwendige Packages
 
@@ -31,8 +30,7 @@ in der .tex Datei erzeugt werden.
 Die Makefile erzeugt ein Unterverzeichnis namens "build", in dem alle von LaTeX erzeugten Dateien, welche für die
 Erstellung der PDF-Datei benötigt werden und binden diese Zusammen. die finale PDF-Datei wird auch im build Verzeichnis
 abgelegt.
-||||||| (empty tree)
-=======
+
 # Persönliche LaTeX-Bewerbungsvorlage
 
 Dies ist meine LaTeX Bewerbungsvorlage mit Anschreiben, Lebenslauf und Umschulungsthemen.
@@ -50,4 +48,3 @@ die Pfade sind
 ```firmen/FIRMANAME/text.tex```
 
 Dann lässt sich im Hauptverzeichnis, in der sich die ```Bewerbung.tex``` Datei befindet, über das Terminal, mit einem einfachen ```make``` Befehl eine PDF erstellen, welche im selbigen Verzeichnis gespeichert wird.
->>>>>>> 20ec0e7 (Bewerbungs Template)
