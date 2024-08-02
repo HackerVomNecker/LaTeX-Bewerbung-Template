@@ -1,0 +1,303 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%                                            %%%%
+%%%%   Komplette Bewerbung in LaTeX schreiben   %%%%
+%%%%                                            %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% DOKUMENTEINSTELLUNGEN %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Dokumentart: Zeichengröße=12pt, Blattgröße=A4, Schriftart=sans %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper,sans]{moderncv}
+
+% Stil %
+%%%%%%%%
+\moderncvstyle{fancy}              % Möglichkeiten: fancy,banking,casual,oldstyle
+
+% Farben %
+%%%%%%%%%%
+
+% Wenn man es einstellen will
+    % 1. Farbe definieren wie \definiecolor{NAME}{rgb}{ZAHL,ZAHL,ZAHL} ZAHL zwischen 0-1 zb. 0.5,0.5,0.5
+    % 2. Farbe laden wie \colorlet{colorX}{NAME} colorX: X kann 0,1,2 sein damit kann Farbe von Text,Zeichen oder Überschriften geändert werden
+
+%\definecolor{SCHWARZ}{rgb}{0,0,0}% black
+%\definecolor{LILA}{rgb}{0.50,0.33,0.80}% purple
+%\definecolor{GRAU}{rgb}{0.45,0.45,0.45}% dark grey
+
+%\definecolor{green}{rgb}{0, 0.9, 0}
+%\colorlet{color1}{green}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%%% PAKETE LADEN %%%
+%%%%%%%%%%%%%%%%%%%%
+
+% Deutsche Spache und Tastatur input %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[T1]{fontenc}        % Schoene Ausgabe von Umlauten
+\usepackage[utf8]{inputenc}     % Umlaute ins PDF laden
+\usepackage[ngerman]{babel}     % Deutsche Sprache
+
+% Ränder/skalieren %
+%%%%%%%%%%%%%%%%%%%%
+\usepackage[left=2.0cm, right=1.0cm, top=1.5cm, bottom=1.5cm]{geometry}
+%\usepackage[scale=0.8]{geometry}
+
+
+% Eingaben für moderncv vorbereiten %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\firstname{Vorname}
+\familyname{Nachname}
+\title{Lebenslauf}              % Für den Befehl \makecvtitle Damit der Titel der Seite TITEL ist
+\address{Addresse Nummer}{PLZ ORT}{LAND \medskip}
+\mobile{+99~(012)~345~6789}
+\email{EMAIL@PROVIDER.KA}
+%\social[linkedin]{Nutzername}
+%\social[twitter]{Nutzername}
+%\social[github]{Nutzername}
+
+\nopagenumbers{}        % Keine Seitenzahlen
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%%% DOKUMENT ANFANG %%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% PDF METADATEN %%%
+%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+    %pdftoolbar=false,
+    %pdfmenubar=false,
+    pdftitle={Bewerbung - VORNAME NACHNAME},                             % PDF Titel beim Aufruf im PDFreader
+    pdfsubject={Bewerbung von VORNAME NACHNAME für eine STELLE},    % PDF Betreff 
+    pdfkeywords={VORNAME NACHNAME} {Bewerbung} {Lebenslauf},             % Schlüsselworte für Suchen
+    }
+
+
+%%%%%%%%%%%%%%%%%%%
+%%% ANSCHREIBEN %%%
+%%%%%%%%%%%%%%%%%%%
+
+% Angaben für den Briefkopf %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{firmen/firma1/recipient.tex}     %PFAD ANPASSEN
+
+\subject{Bewerbung um STELLE als JOB}    % Überschrift vor dem opening
+\opening{Sehr geehrter Damen und Herren,}                       % Begrüßung
+\closing{Mit freundlichen Grüßen, \vspace{-1cm} \\ \includegraphics[width=7.5cm]{unterschrift.png} \vspace{-3,5cm}}     % Ende mit Unterschrift
+\enclosure[Anhänge]{Lebenslauf, Umschulungsthemen}          % Fußzeile um Anhänge anzugeben
+\date{\today}                           % Datum
+
+% Erstelle Briefkopf %
+%%%%%%%%%%%%%%%%%%%%%%
+\makelettertitle
+
+% Inhalt des Anschreibens %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{firmen/firma1/anschreiben.tex}   %PFAD ANPASSEN
+
+\bigskip    % Abstand zum Ende
+
+% Ende des Anschreibens %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeletterclosing
+\newpage    % Neue Seite
+
+
+%%%%%%%%%%%%%%%%%%
+%%% LEBENSLAUF %%%
+%%%%%%%%%%%%%%%%%%
+
+% Anfang des Lebenslaufs mit persönlichen Angaben %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makecvtitle
+
+% Ändere den Groß geschrieben Eintrag %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 1. Eintrag im Lebenslauf %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Persönliche Angaben}
+    \cvitem{Geburtsdatum}{GEBURTSDATUM}
+    \cvitem{Geburtsort}{GEBURTSNAME}
+    \cvitem{Geschlecht}{GESCHLECHT}
+
+% 2. Eintrag im Lebenslauf %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Schulischer Werdegang}
+    \cvitem{2011-2015}{KINDERGARTEN}
+    \cvitem{2015-2018}{GRUNDSCHULE}
+    \cvitem{2018-2020}{WEITERFÜHRENDE SCHULE}
+    \cvitem{seit 02.2024}{SELBSTSTÄNDIG}
+
+% 3. Eintrag im Lebenslauf $
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sprachen}
+    \cvitem{Deutsch}{Muttersprache}
+    \cvitem{Englisch}{Verhandlungssicher}
+    \cvitem{Niederländisch}{Grundkenntnisse}
+
+% 4. Eintrag im Lebenslauf %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{IT-Kenntnisse}
+    \cvitem{Linux}{Täglicher Einsatz gängigster Distributionen und
+        Verwaltung tiefergehender Mechanismen}
+    \cvitem{Netzwerke}{Fortgeschrittene Kenntnisse}
+    \cvitem{Programmiersprachen}{
+        \begin{itemize}
+            \item Python: Fortgeschrittene Kenntnisse
+            \item LaTeX: Grundlagen
+        \end{itemize}
+        }
+    \cvitem{Virtualisierung}{Proxmox, Hyper-V, Kubernetes}
+
+% 5. Eintrag im Lebenslauf %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Interessen}
+    \cvitem{Homeserver}{In der Freizeit beschäftige ich mich mit der funktionellen
+        Erweiterung des Virtuallisierungssystems um Dienste wie zb. Gamingserver,
+        Codeserver zu betreiben und diese auf Sicherheitsaspekte zu testen
+        }
+    \cvitem{Lesen}{Besonders interessieren mich philosophische Werke von\newline Nietzsche, Camus, Sartre und Marx}
+    \cvitem{Sport}{Wartung und fahren von Inlineskates und Fahrrad und Eigengewichttraining}
+    \cvitem{Weiteres}{Musizieren, Malen, Reparieren von Gegenständen des täglichen Gebrauchs}
+
+
+\newpage    % Neue Seite
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% UMSCHULUNGSTHEMEN %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Überschrift %
+%%%%%%%%%%%%%%%
+\section{\huge}\cvitem{}{\huge Umschulungsthemen}       % Text
+
+\bigskip \bigskip   % Abstand zur Überschrift
+
+% 1. Themenbereich %
+%%%%%%%%%%%%%%%%%%%%
+\section{Programmiersprachen}
+    \cvitem{}{
+        \begin{itemize}
+            \item Strukturorientierte Programmierung
+            \begin{itemize}
+                \item Python
+            \end{itemize}
+            \item Objektorientierte Programmierung
+            \begin{itemize}
+                \item Python
+                \item C++
+            \end{itemize}
+            \item UML-Diagramme
+        \end{itemize}
+    }
+
+% 2. Themenbereich %
+%%%%%%%%%%%%%%%%%%%%
+\section{Webdevel- opment}
+    \cvitem{}{
+        \begin{itemize}
+            \item HTML
+            \item CSS
+            \item PHP
+        \end{itemize}
+    }
+
+% 3. Themenbereich %
+%%%%%%%%%%%%%%%%%%%%
+\section{Datenbanken}
+    \cvitem{}{
+        \begin{itemize}
+            \item SQL
+            \item mySQL auf Basis von MariaDB
+            \item ER-Diagramme
+        \end{itemize}
+    }
+
+% 4. Themenbereich %
+%%%%%%%%%%%%%%%%%%%%
+\section{Virtualisierung}
+    \cvitem{}{
+        \begin{itemize}
+            \item Hyper-V
+            \item KVM
+        \end{itemize}
+    }
+
+% 5. Themenbereich %
+%%%%%%%%%%%%%%%%%%%%
+\section{Netzwerke}
+    \cvitem{}{
+        \begin{itemize}
+            \item Planung eines Netzwerkes
+            \item DHCP
+            \item DNS
+            \item VLan
+            \item Subnetting
+            \item Netzwerktopologien
+            \item Strukturierte Verkabelung
+        \end{itemize}
+    }
+
+% 6. Themenbereich %
+%%%%%%%%%%%%%%%%%%%%
+\section{Betriebs- systeme}
+    \cvitem{}{
+        \begin{itemize}
+            \item Linux
+            \begin{itemize}
+                \item Debian
+                \item Ubuntu
+            \end{itemize}
+            \item Windows 10
+            \item Windows Server
+            \begin{itemize}
+                \item Activ Directory
+                \item Domain Controller
+            \end{itemize}
+        \end{itemize}
+    }
+
+% 7. Themenbereich %
+%%%%%%%%%%%%%%%%%%%%
+\section{Weiteres}
+\cvitem{}{
+    \begin{itemize}
+        \item Elektrotechnik
+        \item Redundanz
+            \begin{itemize}
+                \item Raid
+                \item Ausfallsicherheit
+            \end{itemize}
+        \item Projektmanagement
+            \begin{itemize}
+                \item Projektplanung und Risiken
+                \item Netzpläne
+                \item Gantt-Diagramme
+            \end{itemize}
+        \item Logik
+            \begin{itemize}
+                \item Logikgatter
+                \item Wahrheitstabellen
+            \end{itemize}
+    \end{itemize}
+    }
+
+
+% LINUX: Hardware unter Linux, Packagemanager, Pulseaudio, Festplatten nutzung, Lizenzen, 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ENDE DES DOKUMENTS %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
